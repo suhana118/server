@@ -39,3 +39,13 @@ connectDB();
 app.get('/', (req, res) => {
   res.send('🚀 Server is running successfully on Render and connected to MongoDB Atlas!');
 });
+
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
+
+
+//Export app (for testing or vecel if reused)
+module.exports=app;
